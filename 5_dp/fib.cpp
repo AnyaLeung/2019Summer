@@ -5,21 +5,16 @@ using namespace std;
 int arr[100] = {0};
 
 int fib(int n){
-    int result = 0;
-
-    if(arr[n]!=0){
-        return arr[n];
-    }
-
     if(n==0 || n==1){
-        result = 1;
+        return 1;
     }
-    else{
-        result = fib(n-1) + fib(n-2);
-    }
-    arr[n] = result;
 
-    return result;
+    arr[0] = 1;
+    arr[1] = 1;
+    for(int i=2; i<n+1; i++){
+        arr[i] = arr[i-1] + arr[i-2];
+    }
+    return arr[n];
 }
 
 int main(void){
