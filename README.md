@@ -16,4 +16,4 @@
 * ✅62, ✅63, ✅64, ✅120, ✅174, ✅931
 * 85, 221, 304
 * 688, 576, 935
-* [stock problem link](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/yi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-lab)
+* [stock problem link](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/yi-ge-fang-fa-tuan-mie-6-dao-gu-piao-wen-ti-by-lab)(裂🧱安利
