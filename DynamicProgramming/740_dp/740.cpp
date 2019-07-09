@@ -3,22 +3,21 @@ public:
     int deleteAndEarn(vector<int>& nums) {
         int len = nums.size();
         if(!len) return 0;
-        vector<int> nocount(10001, 0);
+        vector<int> count(10001, 0);
+        vector<int> dp = count;
         int maxno = INT_MIN;
         
         for(auto num : nums){
-            nocount[num] ++;
-            maxno = (num > maxno)? num : maxno;
+            count[num] ++;
+            maxno = (num>maxno)? num : maxno;
         }
         
-        int curr = nocount[1];
-        int prev = 0;
+        dp[0] = 0;
+        dp[1] = count[1];
         for(int i=2; i<=maxno; i++){
-            int tmp = curr;
-            curr = max(curr, nocount[i]*i+prev);
-            prev = tmp;
+            dp[i] = max(count[i]*i+dp[i-2], dp[i-1]);
         }
-        
-        return curr;
+                   
+        return dp[maxno];                    
     }
 };
