@@ -2,7 +2,7 @@ class Solution {
 public:
     int numTilings(int N) {
         int con = 1e9 + 7; //10^9 + 7
-        vector<long long> dp(1001, 0);
+        vector<unsigned int> dp(1001, 0);
         dp[0] = 0;
         dp[1] = 1;
         dp[2] = 2;
