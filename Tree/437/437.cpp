@@ -15,13 +15,11 @@ public:
             return res;
         }
         int rem = sum - root->val;
-        if(root!=NULL){
-            int rem = sum - root->val;
-            if(!rem){
-                res ++;
-            }
-            res += DFS(root->left, rem) + DFS(root->right, rem);
+        if(!rem){
+            res ++;
         }
+        res += DFS(root->left, rem);
+        res += DFS(root->right, rem);
         return res;
     }
     
@@ -29,7 +27,7 @@ public:
         if(root==NULL){
             return 0;
         }
-        return DFS(root, sum) + pathSum(root->left, sum) + 
-            pathSum(root->right, sum); 
+        return DFS(root, sum) + pathSum(root->left, sum) +
+            pathSum(root->right, sum);
     }
 };
