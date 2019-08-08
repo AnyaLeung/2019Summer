@@ -13,19 +13,19 @@ public:
     
     int get(int key) {
         auto it = map.find(key);
-        if(it==map.end()){ //cannot find
+        if(it==map.end()){ //cannot find in map
             return -1;
         }
-        else{ //found
-            cache.splice(cache.begin(), cache, it->second); //put to top
+        else{ //found in map
+            cache.splice(cache.begin(), cache, it->second); //put to cache front
         }
-        return map[key]->second;
+        return map[key]->second; //return mapped val
     }
     
     void put(int key, int value) {
         auto it = map.find(key);
-        if(it==map.end()){ //if not found
-            if(cache.size()==cap){ //if full
+        if(it==map.end()){ //if key not in map
+            if(cache.size()==cap){ //if cache full
                 auto lastPair = cache.back();
                 int lastKey = lastPair.first;
                 //delete from both map and cache
@@ -33,11 +33,10 @@ public:
                 cache.pop_back();
             }
             //insert into front
-            cache.push_front(make_pair(key, value));
+            cache.push_front({key, value});
             map[key] = cache.begin();
         }
-        else{
-            //key exist, move to front
+        else{ //if in map, move to cache front
             cache.erase(map[key]);
             cache.push_front({key, value});
             map[key] = cache.begin();
