@@ -1,8 +1,6 @@
 class Solution {
 public:
     vector<vector<int>> dirs = {{0, -1}, {-1, 0}, {0, 1}, {1, 0}};
-    vector<int> helperX = {-1, 1, 0, 0};
-    vector<int> helperY = {0, 0, -1, 1};
     
     int longestIncreasingPath(vector<vector<int>>& matrix) {
         if(matrix.empty()||matrix[0].empty()){
