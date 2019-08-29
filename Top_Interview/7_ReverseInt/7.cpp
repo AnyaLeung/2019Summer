@@ -9,11 +9,11 @@ public:
                 return 0;
             }
               if(res<INT_MIN/10 || (res==INT_MIN/10 && remainder<-8)){
-                return 0;
-            } 
-            res = res * 10 + remainder;
-                 x /= 10;
+                  return 0;
+              } 
+              res = res * 10 + remainder;
+              x /= 10;
         }
-                 return res;
+        return res;
     }
 };

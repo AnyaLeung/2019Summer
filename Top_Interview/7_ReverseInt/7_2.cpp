@@ -15,6 +15,6 @@ public:
             x /= 10; 
         }
         
-        return res;
+        return (int)res;
     }
 };
