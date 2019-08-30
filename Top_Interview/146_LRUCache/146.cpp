@@ -10,11 +10,7 @@ public:
     LRUCache(int capacity) {
         cap = capacity;
     }
-    
-    int get(int key) {
-        auto it = map.find(key);
-        if(it==map.end()){ //cannot find in map
-            return -1;
+    int get(int key) { auto it = map.find(key); if(it==map.end()){ //cannot find in map return -1;
         }
         else{ //found in map
             cache.splice(cache.begin(), cache, it->second); //put to cache front
@@ -38,6 +34,7 @@ public:
         }
         else{ //if in map, move to cache front
             cache.erase(map[key]);
+            map.erase(key);
             cache.push_front({key, value});
             map[key] = cache.begin();
         }
