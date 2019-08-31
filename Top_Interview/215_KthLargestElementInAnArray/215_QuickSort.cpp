@@ -12,6 +12,9 @@ public:
             }
             swap(nums[begin], nums[end]);
         }
+        //把pivot放到重合的begin(end)处
+        //此时左侧是比它大的，右侧是比它小的
+        //begin是第几位，它就是第k大的
         swap(nums[begin], nums[last]);
         return begin;
     }
@@ -30,8 +33,6 @@ public:
         else if(div>=k-1){
             return quick_sort(nums, left, div-1, k);
         }
-        //quick_sort(nums, left, div-1, k);
-        //quick_sort(nums, div+1, right, k);
         return -1;
     }
     
