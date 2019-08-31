@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //descending order
     int Partition(vector<int>& nums, int begin, int end){
         int key = nums[end];
         int last = end;
@@ -30,7 +31,7 @@ public:
         else if(div<k-1){
             return quick_sort(nums, div+1, right, k);
         }
-        else if(div>=k-1){
+        else if(div>k-1){
             return quick_sort(nums, left, div-1, k);
         }
         return -1;
